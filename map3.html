@@ -16,10 +16,11 @@ window.onload = function() {
 	map.setZoom(16)
 	map.panTo([ 35.943560,136.188917 ]) // 鯖江駅
 
-	map.addIcon(35.943560, 136.188917, "鯖江駅")
-	map.addIcon(35.944571, 136.186228 , "Hana道場", "icon-hanadojo.png", 64)
+	//map.addIcon(35.943560, 136.188917, "鯖江駅")
+	//map.addIcon(35.944571, 136.186228 , "Hana道場", "icon-hanadojo.png", 64)
+	map.addIcon(lat, lng, name, "icon-carparking.png", 64, 64)
 
-    // SPARQLエンドポイント
+	// SPARQLエンドポイント
 	setSPARQLEndpoint("https://sparql.opendata.cc/data/sparql")
 
 	// SPARQLクエリー
@@ -37,7 +38,7 @@ window.onload = function() {
 			)
 		} limit 100
 
-	map.addIcon(lat, lng, name, "icon-carparking.png", 64, 64)`
+	`
 	
 	var p = map.getCenter()
 	query = query.replace("$LAT_MAX", p.lat + .1)
